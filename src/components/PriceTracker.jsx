@@ -14,7 +14,7 @@ function PriceTracker({ url }) {
     const fetchPriceHistory = async () => {
         setLoading(true);
         try {
-            const response = await axios.get(`http://localhost:5000/price-history?url=${encodeURIComponent(url)}`);
+            const response = await axios.get(`https://mybackend-deploy.onrender.com/price-history?url=${encodeURIComponent(url)}`);
             setPriceHistory(response.data);
             setError(null);
             setShowPriceHistory(true); // Show price history after fetching

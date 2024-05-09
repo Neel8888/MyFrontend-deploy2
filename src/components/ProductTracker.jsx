@@ -12,7 +12,7 @@ function ProductTracker({ url, setUrl }) {
   const fetchData = async () => {
     setLoading(true);
     try {
-      let destUrl = `http://localhost:5000/scrape?url=${encodeURIComponent(
+      let destUrl = `https://mybackend-deploy.onrender.com/scrape?url=${encodeURIComponent(
         url
       )}`;
       console.log(destUrl);
@@ -29,7 +29,7 @@ function ProductTracker({ url, setUrl }) {
   const trackData = async () => {
     setLoading(true);
     try {
-      let trackUrl = `http://localhost:5000/scrape?url=${encodeURIComponent(
+      let trackUrl = `https://mybackend-deploy.onrender.com/scrape?url=${encodeURIComponent(
         url
       )}`;
       const response = await axios.get(trackUrl);

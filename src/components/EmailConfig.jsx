@@ -16,7 +16,7 @@ function EmailConfig({ onClose ,url}) {
         setLoading(true);
         try {
             // Send email configuration data to backend
-            const response = await axios.post('http://localhost:5000/configure-email', { url,email });
+            const response = await axios.post('https://mybackend-deploy.onrender.com/configure-email', { url,email });
             console.log('Email configuration successful:', response.data);
             onClose(); // Close the EmailConfig component
         } catch (error) {

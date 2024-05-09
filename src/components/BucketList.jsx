@@ -98,7 +98,7 @@ function BucketList({setUrl}) {
 
     const fetchBucketList = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/get_bucket_list');
+            const response = await axios.get('https://mybackend-deploy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.com/get_bucket_list');
             setBucketList(response.data);
         } catch (error) {
             setError('Error fetching bucket list from server.');
@@ -108,7 +108,7 @@ function BucketList({setUrl}) {
     // const addToBucketList = async () => {
     //     if (urlToAdd.trim() !== '' && shortNameToAdd.trim() !== '') {
     //         try {
-    //             await axios.post('http://localhost:5000/add_to_bucket_list', {
+    //             await axios.post('https://mybackend-deploy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.com/add_to_bucket_list', {
     //                 url: urlToAdd,
     //                 shortName: shortNameToAdd
     //             });
@@ -128,7 +128,7 @@ function BucketList({setUrl}) {
             try {
                 if (editIndex !== null) {
                     // Modify existing item
-                    await axios.put(`http://localhost:5000/update_bucket_list/${urlId}`, {
+                    await axios.put(`https://mybackend-deploy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.com/update_bucket_list/${urlId}`, {
                         url: urlToAdd,
                         shortName: shortNameToAdd,
                         id: urlId
@@ -136,7 +136,7 @@ function BucketList({setUrl}) {
                     setEditIndex(null);
                 } else {
                     // Add new item
-                    await axios.post('http://localhost:5000/add_to_bucket_list', {
+                    await axios.post('https://mybackend-deploy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.com/add_to_bucket_list', {
                         url: urlToAdd,
                         shortName: shortNameToAdd
                     });
@@ -155,7 +155,7 @@ function BucketList({setUrl}) {
 
     const deleteFromBucketList = async (shortName) => {
         try {
-            await axios.delete(`http://localhost:5000/delete_from_bucket_list/${shortName}`);
+            await axios.delete(`https://mybackend-deploy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.comloy.onrender.com/delete_from_bucket_list/${shortName}`);
             // Refresh bucket list after deleting item
             fetchBucketList();
         } catch (error) {
